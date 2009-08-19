@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import slambook.com.dao.MyBookDao;
+import slambook.com.model.Slambook;
 import slambook.com.model.Template;
 import slambook.com.service.MyBookService;
 
@@ -30,9 +31,15 @@ public class MyBookServiceImpl implements MyBookService{
 	}
 
 	@Override
-	public boolean saveSlambook(String slambookName, long templateId, long userId) {
-		boolean result=getMyBookDao().saveSlambook(slambookName,templateId,userId);
+	public boolean saveSlambook(String slambookName, long templateId,String templateImage, long userId) {
+		boolean result=getMyBookDao().saveSlambook(slambookName,templateId,templateImage,userId);
 		return false;
+	}
+
+	@Override
+	public List<Slambook> getBooks(long userId) {
+		List<Slambook> slambooks = getMyBookDao().getAllBooks(userId);
+		return slambooks;
 	}
 	
 	

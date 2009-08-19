@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/home.css" type="text/css" />
+<link rel="stylesheet" href="css/mybook.css" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="js/mybook.js" type="text/javascript"></script>
 </head>
@@ -66,23 +66,31 @@
 		
 	     <!-- modal ends -->
 	
-		<div class="col col-md-2">
-		
-			<div ><img class="profile_img" src="${user.profileImg}" /></div>
-			<ul class="activity-links">
-				<li><c:out value=" ${user.firstName }"></c:out></li>
-				<li ><a ng-click="showHome()" href="javascript:void(0)">Home</a></li>
-				<li ><a ng-click="getConnections()" href="javascript:void(0)" >Connections</a></li>
-				<li ><a  href="myBook.html">My SLambuk</a></li>
-				<li ><a id="clickadd" href="javascript:void(0)">Add</a></li>
-			</ul>
-			</div>
-			<!-- main content -->
-			<div class="col col-md-8">
-			<div>
+		<jsp:include page="includes/menu.jsp" /> 
 			
+			
+			<!-- main content -->
+			<div class="col col-md-8" id="select-Books">
+			 <div ng-if="slambooks.length >0">
+				<div  ng-repeat="slambook in slambooks">
+						<div class=" col col-md-4" ng-click="showSlambook( slambook)">
+								<div class="slam-box">
+									<div >
+										<img class="template-img" alt="" src="{{slambook.templateImageUrl}}">
+										<span class="addBookText" ng-bind="slambook.slambookName"></span>
+									</div>
+									
+									<div class="addBookText" >
+										<span>Pages</span>
+										<span ng-bind="slambook.slambookPages.length"></span>
+									</div>
+								</div>
+							
+						</div>
+				</div>
 			</div>
-				<div  ng-click="showTempModal()">
+			
+				<div class="col col-md-4" ng-click="showTempModal()">
 				<img class="template-img" alt="" src="images/icons/add.svg"><br>
 				<a class="addBookText" href="javascript:void(0)">Add a book</a>
 				</div>
@@ -90,6 +98,51 @@
 			</div>
 			
 			<!-- main content ends -->
+			
+			<!-- main slambook first page -->
+			<div id="show-book" class="col col-md-8">
+			  <div  ng-show="firstPage">
+			  
+			 <button class="next-page" ng-click="nextPage()">next-page >></button>
+			 <div class="transbox-title text-center">
+			   <span>Hey Its My book  &#9786 </span> <span><c:out value=" ${user.firstName }"></c:out></span>
+			 </div>
+			 
+			 
+			
+			<div class="row slambook-frontpage-row" >
+					<div>
+						<div class="transbox-front-page col col-md-4 ">
+							   <li><img class="profile_img" src="${user.profileImg}" /></li>
+							   <div ng-if="firstPage.nickName">
+							   <li> <span ng-bind="firstPage.nickName"></span></li>
+							   </div>
+							   <div ng-else>
+							   		<li> <input type="text" placeholder="My NickName ?"></li>
+							   </div>
+							  
+				 		</div>
+						 <div class="transbox-front-page col col-md-6 ">
+							 <ul>
+									 <li> Tell your Friends about Yourself</li>
+									   <li><input type="text" placeholder="I love color ? "></li>
+									   <li><textarea rows="6" cols="30" placeholder="Some words about yourself..."></textarea></li>
+							 </ul>
+				   
+				 			</div>
+					</div>
+					
+					
+			</div>
+			
+			</div><!-- first page ends -->
+			
+			<div  ng-show="!firstPage">
+				
+			
+			</div>
+			</div> 
+			
 	</div>
 	
 	

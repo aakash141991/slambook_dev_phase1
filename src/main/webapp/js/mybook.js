@@ -1,4 +1,3 @@
-
 var app = angular.module("bookApp", []);
 
 
@@ -64,5 +63,3 @@ app.controller("bookController", ['$scope','$http',function( $scope, $http) {
 			    
 		    
 }]);
-
-

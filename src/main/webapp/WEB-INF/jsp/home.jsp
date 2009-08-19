@@ -33,17 +33,18 @@
 
 <div class="container">
 	<div class="row" ng-app="myApp" ng-controller="homeController" ng-init="init()">
-		<div class="col col-md-2">
+		<%-- <div class="col col-md-2">
 		
 			<div ><img class="profile_img" src="${user.profileImg}" /></div>
 			<ul class="activity-links">
 				<li><c:out value=" ${user.firstName }"></c:out></li>
-				<li ><a ng-click="showHome()" href="javascript:void(0)">Home</a></li>
-				<li ><a ng-click="getConnections()" href="javascript:void(0)" >Connections</a></li>
+				<li ><a ng-click="home" href="javascript:void(0)">Home</a></li>
+				<li ><a ng-click="getConnections.html" href="javascript:void(0)" >Connections</a></li>
 				<li ><a  href="myBook.html">My SLambuk</a></li>
 				<li ><a id="clickadd" href="javascript:void(0)">Add</a></li>
 			</ul>
-			</div>
+			</div> --%>
+			<jsp:include page="includes/menu.jsp" /> 
 			
 		<div class="col col-md-8">
 				
@@ -54,27 +55,7 @@
 				  
 				  <!-- friends -->
 				  
-				  <div class="connections row" id="connections">
-				  	<c:forEach items = "${friends}" var = "friend">
-				  	
-				   			<div class="col col-md-6">
-				   			<div class="friend-box text-center">
-						       	<img class="friend-img" src="${friend.profileImg}">
-						       	<br>
-						       	<div>
-						       	<c:out value=" ${friend.firstName }"></c:out>&nbsp&nbsp<c:out value=" ${friend.lastName }"></c:out>
-						       	</div>
-						       	<br>
-						      </div> 	
-						     </div>
-						       
-      				</c:forEach>
-						<div  id="load-more-row">
-						
-							<a id="load-more" >Load more</a>
-							
-						</div>
-				  </div>
+				
 				
 		</div>
 		<div class="col col-md-2">

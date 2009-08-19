@@ -97,6 +97,7 @@ public class HomePageDaoImpl implements HomePageDao{
 	@Override
 	@Cacheable(value="friends")
 	public List<User> getConnections(String email) {
+		System.out.println("user email = "+email);
 		List<User> friends= new ArrayList<User>();
 		List<FriendList> friendList = new ArrayList<FriendList>();
 		
@@ -109,6 +110,7 @@ public class HomePageDaoImpl implements HomePageDao{
 		for(FriendList frd: friendList){
 			String frdemail=frd.getFriend_email();
 			User friend = getUserByEmail(frdemail);
+			System.out.println("friend email = "+ friend.getEmail());
 			friends.add(friend);
 			}
 		return friends;

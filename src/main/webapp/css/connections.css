@@ -1,0 +1,25 @@
+@CHARSET "ISO-8859-1";
+
+.connections{
+	margin-bottom:50px;
+}
+#load-more-row{
+	 padding: 10px;
+    text-align: center;
+    background-color: maroon;
+	color:white;
+	position: fixed;
+	bottom: 100px;
+	margin: -16px -8px;
+	margin-left: 350px;
+}
+.friend-box{
+	
+	padding-bottom: 20px;
+	
+}
+.friend-img{
+	max-height: 100px;
+    max-width: 100px;
+    margin-top: 20px;
+}

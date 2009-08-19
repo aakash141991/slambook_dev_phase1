@@ -1,9 +1,7 @@
 package slambook.com.model;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,8 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,6 +28,11 @@ public class Slambook {
 	private String slambookName;
 	
 	private long templateId;
+	
+	private String templateImageUrl;
+	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	private FirstPage firstPage;
 	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "pageId",fetch = FetchType.EAGER)
 	@Column(name = "PAGE_ID")
@@ -76,6 +79,23 @@ public class Slambook {
 	public void setBelongsToUserId(long belongsToUserId) {
 		this.belongsToUserId = belongsToUserId;
 	}
+
+	public String getTemplateImageUrl() {
+		return templateImageUrl;
+	}
+
+	public void setTemplateImageUrl(String templateImageUrl) {
+		this.templateImageUrl = templateImageUrl;
+	}
+
+	public FirstPage getFirstPage() {
+		return firstPage;
+	}
+
+	public void setFirstPage(FirstPage firstPage) {
+		this.firstPage = firstPage;
+	}
+	
 	
 	
 }

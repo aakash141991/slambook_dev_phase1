@@ -8,7 +8,9 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import slambook.com.dao.MyBookDao;
+import slambook.com.model.FirstPage;
 import slambook.com.model.FriendList;
+import slambook.com.model.Page;
 import slambook.com.model.Slambook;
 import slambook.com.model.Template;
 import slambook.com.model.User;
@@ -49,13 +51,35 @@ public class MyBookDaoImpl implements MyBookDao{
 
 
 	@Override
-	public boolean saveSlambook(String slambookName, long templateId, long userId) {
+	public boolean saveSlambook(String slambookName, long templateId,String templateImage, long userId) {
 		Slambook slambook = new Slambook();
 		slambook.setBelongsToUserId(userId);
 		slambook.setSlambookName(slambookName);
 		slambook.setTemplateId(templateId);
+		slambook.setTemplateImageUrl(templateImage);
+		FirstPage firstPage= new FirstPage();
+		slambook.setFirstPage(firstPage);
 		getHibernateTemplate().save(slambook);
+		
+		List<Page> pages = new ArrayList<Page>();
+		Page page = new Page();
+		page.setPageNo(1);
+		pages.add(page);
+		slambook.setSlambookPages(pages);
 		return true;
+	}
+
+
+	@Override
+	public List<Slambook> getAllBooks(long userId) {
+		List<Slambook> slambooks = new ArrayList<Slambook>();
+		String query="from Slambook s where s.belongsToUserId=?";
+		List<Object> books = getHibernateTemplate().find(query,userId);
+		for(Object obj:books){
+			Slambook slambook=(Slambook) obj;
+			slambooks.add(slambook);
+		}
+		return slambooks;
 	}
 
 }

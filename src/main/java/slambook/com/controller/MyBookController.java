@@ -1,5 +1,6 @@
 package slambook.com.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import slambook.com.model.LoginForm;
+import slambook.com.model.Slambook;
 import slambook.com.model.Template;
 import slambook.com.model.User;
 import slambook.com.service.MyBookService;
@@ -46,6 +48,9 @@ public class MyBookController {
 		
 	}
 	
+
+	
+	
 	@RequestMapping(method=RequestMethod.POST,value="/getTemplates.html")
 	@ResponseBody
 	public List<Template> getAllTemplates(Model model,HttpSession httpSession){
@@ -55,12 +60,25 @@ public class MyBookController {
 		
 	}
 	
-	@RequestMapping(method=RequestMethod.POST,value="/saveSlambook.html")
+	@RequestMapping(method=RequestMethod.POST,value="/getBooks.html")
 	@ResponseBody
-	public boolean saveSlambook(@RequestParam("slambookName") String slambookName,@RequestParam("templateId") long templateId,HttpSession httpSession){
+	public List<Slambook> getBooks(HttpSession httpSession){
 		User user = (User) httpSession.getAttribute("user");
 		long userId= user.getUserId();
-		boolean result=getMyBookService().saveSlambook(slambookName,templateId,userId);
+		List<Slambook> slambooks= new ArrayList<Slambook>();
+		slambooks=getMyBookService().getBooks(userId);
+		 
+		return slambooks;
+		
+	}
+	
+	@RequestMapping(method=RequestMethod.POST,value="/saveSlambook.html")
+	@ResponseBody
+	public boolean saveSlambook(@RequestParam("slambookName") String slambookName,@RequestParam("templateId") long templateId,
+			@RequestParam("templateImage") String templateImage,HttpSession httpSession){
+		User user = (User) httpSession.getAttribute("user");
+		long userId= user.getUserId();
+		boolean result=getMyBookService().saveSlambook(slambookName,templateId,templateImage,userId);
 		 
 		return result;
 		

@@ -47,8 +47,7 @@ static Logger logger = Logger.getLogger(HomeController.class);
 		
 		if((user != null)&& (LoginUtil.getLogginStatus(httpSession)).equalsIgnoreCase("true") ){
 			model.addAttribute("user", user);
-			List <User> friends= homePageService.getConnections(user.getEmail());
-			model.addAttribute("friends",friends);
+			
 			
 			return "home";
 		}else{
@@ -56,7 +55,20 @@ static Logger logger = Logger.getLogger(HomeController.class);
 		}
 		
 	}
-	
+	@RequestMapping("/getConnectionsPage.html")
+	public String getConnectionsPage(Model model,HttpSession httpSession){
+		User user = (User) httpSession.getAttribute("user");
+		
+		if((user != null)&& (LoginUtil.getLogginStatus(httpSession)).equalsIgnoreCase("true") ){
+			model.addAttribute("user", user);
+			List <User> friends= homePageService.getConnections(user.getEmail());
+			model.addAttribute("friends",friends);
+			return "connections";
+		}else{
+			return "redirect:index.html";
+		}
+		
+	}
 	@RequestMapping(method=RequestMethod.GET,value="/logout")
 	public String logOut(Model model,HttpSession httpSession){
 		httpSession.invalidate();
