@@ -8,7 +8,7 @@ import slambook.com.model.User;
 
 public interface HomePageService {
 
-	public void addFriend(User u, User friend);
+	public void addFriend(User u, String friend, HttpSession httpSession);
 
 	public User getUserByEmail(String string);
 

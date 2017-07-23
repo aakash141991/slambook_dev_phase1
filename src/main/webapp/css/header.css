@@ -16,6 +16,14 @@
 	width:30px;
 	float:right;
 	margin-right:30px;
+	margin-top: 20px;
 	color:white;
 	font-weight: bold;
+}
+.logo{
+	width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    position: absolute;
+    margin-left: 10px;
 }

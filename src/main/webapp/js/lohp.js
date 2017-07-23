@@ -26,6 +26,6 @@
 			plusDivs(1);
 			});
 		
-	  setInterval(function(){autoPlay(1);},500);
+	  setInterval(function(){autoPlay(1);},5000);
 	}
 	

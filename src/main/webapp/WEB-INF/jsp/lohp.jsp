@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/lohp.css" type="text/css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="jars/jquery-3.2.1.min.js"></script>
 <script src="js/lohp.js" type="text/javascript"></script>
 
 

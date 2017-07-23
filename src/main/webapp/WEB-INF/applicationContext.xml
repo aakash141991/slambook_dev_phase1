@@ -13,7 +13,7 @@
 
 		
 		<aop:aspectj-autoproxy />
-		<context:component-scan base-package="slambook.comS"></context:component-scan>
+		<context:component-scan base-package="slambook.com"></context:component-scan>
 <!-- 		<bean id="logAspect" class="com.hotel.booking.aspect.LoggerAspect" />
  -->		
 		<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

@@ -8,7 +8,7 @@ public interface HomePageDao {
 
 	public User getUserByEmail(String email);
 
-	public void addFriend(User u, User friend);
+	public void addFriend(User u, String friend);
 
 	public List<User> loadFriends(User u);
 }

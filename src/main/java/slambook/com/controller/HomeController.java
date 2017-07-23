@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import slambook.com.model.User;
 import slambook.com.service.HomePageService;
@@ -46,11 +47,11 @@ private HomePageService homePageService;
 	}
 	
 	@RequestMapping(method=RequestMethod.GET,value="/add.html")
-	public String add(Model model,HttpSession httpSession){
-		User friend= homePageService.getUserByEmail("mani.maya@gmail.com");
+	public @ResponseBody String add(HttpSession httpSession){
+		String friend= "mani.maya@gmail.com";
 		User user = (User) httpSession.getAttribute("user");
-		homePageService.addFriend(user,friend);
-		return "redirect:/home";
+		homePageService.addFriend(user,friend,httpSession);
+		return "Success";
 		
 	}
 }

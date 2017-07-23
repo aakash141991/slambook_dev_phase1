@@ -49,10 +49,10 @@ public class HomePageDaoImpl implements HomePageDao{
 
 
 	@Transactional
-	public void addFriend(User currentUser, User friend) {
+	public void addFriend(User currentUser, String friend) {
 		FriendList friends= new FriendList();
 		friends.setUser_email(currentUser.getEmail());
-		friends.setFriend_email(friend.getEmail());
+		friends.setFriend_email(friend);
 	 
 		//friends.setFriendshipDate(new Date());
 		getHibernateTemplate().saveOrUpdate(friends);
