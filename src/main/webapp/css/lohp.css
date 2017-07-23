@@ -1,0 +1,93 @@
+@CHARSET "ISO-8859-1";
+/* sizes */
+#main-wrap > div { min-height: 450px; }
+
+#main-wrap {
+    /* overflow to handle inner floating block */
+    overflow: hidden;
+}
+
+.left-view {
+    float: left;
+    width: 60%;
+     t-family:Arial, Helvetica, sans-serif;
+    background-color: white;
+/*   border-right:solid brown 4px; */
+     height: 500px;
+    
+}
+
+.right-view {
+    float: right;
+    width: 40%;
+    t-family:Arial, Helvetica, sans-serif;
+	   background-color: white;
+	   height: 500px;
+}   
+.logo{
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    position: absolute;
+    margin-left: 10px;
+}
+.header_login .input-username{
+       position: absolute;
+    width: 100px;
+    height: 30px;
+    margin-left: 750px;
+    color: white;
+    margin-top: 10px;
+}
+.header_login .input-password{
+       position: absolute;
+    width: 100px;
+    height: 30px;
+    margin-left: 950px;
+     color: white;
+      margin-top: 10px;
+}
+.header_login .login-submit{
+     position: absolute;
+    width: 100px;
+    height: 50px;
+    margin-left: 1155px;
+    margin-top: 25px;  
+     
+}
+
+/* Registration css */
+.registration-heading{
+	font-size:      40px;
+                font-weight:    bold;
+                font-family:inherit;
+                margin-top:10px;
+}
+.orText{
+	border:none;
+	width:10px;
+}
+.registration-form  td{
+	 border:1px solid brown; 
+}
+
+
+.w3-content{max-width:980px;margin:auto}
+
+.w3-display-container{position:relative}
+.carousel-left{
+	position:absolute;
+	margin-left: 20px;
+	margin-top:270px;
+	z-index: 1;
+	color: brown;
+	font-weight: bold;
+}
+.carousel-right{
+	position:absolute;
+	margin-left: 720px;
+	margin-top:270px;
+	z-index: 1;
+	color: brown;
+	font-weight: bold;
+}

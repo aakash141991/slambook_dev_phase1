@@ -1,0 +1,21 @@
+ @CHARSET "ISO-8859-1";
+
+.header{
+   min-height: 80px;
+	font-family:Arial, Helvetica, sans-serif;
+	   background-color: brown;
+}
+.header-body {
+	
+	margin:0 auto;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.tabs .logout{
+	
+	width:30px;
+	float:right;
+	margin-right:30px;
+	color:white;
+	font-weight: bold;
+}
