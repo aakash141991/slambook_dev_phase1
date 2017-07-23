@@ -3,7 +3,7 @@
 .header{
    min-height: 80px;
 	font-family:Arial, Helvetica, sans-serif;
-	   background-color: brown;
+	   background-color: maroon;
 }
 .header-body {
 	
@@ -12,13 +12,16 @@
 	font-family:Arial, Helvetica, sans-serif;
 }
 .tabs .logout{
-	
-	width:30px;
-	float:right;
-	margin-right:30px;
-	margin-top: 20px;
-	color:white;
-	font-weight: bold;
+	color: white;
+	width: 100px;
+  float: right;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.tabs{
+	padding-top: 20px;
+	width: 100%;
+    margin: 0 auto;
 }
 .logo{
 	width: 100px;
@@ -26,4 +29,11 @@
     margin-top: 10px;
     position: absolute;
     margin-left: 10px;
+}
+.header-icons{
+width: 100px;
+height:20px;
+  float: right;
+  max-height: 100px;
+    max-width: 100px;
 }

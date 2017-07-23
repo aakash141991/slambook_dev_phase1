@@ -10,7 +10,7 @@
 .header{
    min-height: 80px;
 	font-family:Arial, Helvetica, sans-serif;
-	   background-color: brown;
+	   background-color: maroon;
 }
 
 </style>
@@ -33,9 +33,7 @@
                         <label class="lable">Password</label>
                         <form:input type="password"  path="password" />
                     </div>
-                     <div class="login-submit">
-                        <input type="submit" value="Login" name="loginForm">
-                    </div>
+                        <input  class="login-submit" type="submit" value="Login" name="loginForm">
               </form:form>
             </div>
             

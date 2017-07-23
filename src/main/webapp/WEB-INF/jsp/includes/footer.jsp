@@ -6,17 +6,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <style type="text/css">
-.footer-links {
+#footer {
     min-height: 80px;
-    background-color: brown;
+    background-color: maroon;
     font-family:Arial, Helvetica, sans-serif;
+    color:white;
 }
-
+#footer ul{
+	  list-style-type: none;
+}
+.footer-links{
+ padding-top:10px;
+ text-decoration: none;
+}
 </style>
 </head>
 <body>
 	<div id="footer">
-		<div class="footer-links">contact-us</div>
+	<ul>
+		<li class="footer-links">About-us</li>
+		<li class="footer-links">Contact-us</li>
+	</ul>
+		
 	</div>
 </body>
 </html>

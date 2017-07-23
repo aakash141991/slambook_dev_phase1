@@ -53,7 +53,7 @@
 			
 		</table>
 		<div>
-			<input type="submit" value="Create an Account"></td>
+			<input class="create-button" type="submit" value="Create an Account"></td>
 		</div>
 		
 	</form:form>

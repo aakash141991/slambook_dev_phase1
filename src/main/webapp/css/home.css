@@ -12,7 +12,7 @@
     width: 20%;
      t-family:Arial, Helvetica, sans-serif;
      height: 500px;
-       border-right:solid brown 4px;
+       border-right:solid maroon 4px;
     
 }
 .center-view{
@@ -28,7 +28,7 @@
     width: 20%;
     t-family:Arial, Helvetica, sans-serif;
 	   height: 500px;
-	   border-left:solid brown 4px;
+	   border-left:solid maroon 4px;
 }
 
 .activity-links{

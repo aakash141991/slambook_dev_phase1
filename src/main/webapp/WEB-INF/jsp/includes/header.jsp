@@ -30,8 +30,14 @@ $( document ).ready(function() {
             <img src="images/logo.png" alt="" />
         </div>
         <div class="tabs">
-           <a href="javascript:void(0)" class="logout">Logout</a>
-            
+	        <a href="javascript:void(0)" class="logout">Logout</a>
+	        <a href="" class="header-icons" ><img src="images/icons/notify.png" alt="" /></a>
+	        <a href="" class="header-icons" ><img src="images/icons/message.png" alt="" /></a>
+	        <a href="" class="header-icons" ><img src="images/icons/friend-icon.png" alt="" /></a>
+	        <a href="" class="header-icons" ><img src="images/icons/slam-icon.png" alt="" /></a>
+	        
+	        
+	            
         </div>
     </div>
 </body>
