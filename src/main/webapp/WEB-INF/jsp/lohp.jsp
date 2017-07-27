@@ -13,6 +13,9 @@
 
 </head>
 <body>
+<script>
+
+</script>
 <%-- <%@include  file="./WEB-INF/includes/loggedOutHeader.html" %> --%>
 <jsp:include page="includes/loggedOutHeader.jsp" />
 

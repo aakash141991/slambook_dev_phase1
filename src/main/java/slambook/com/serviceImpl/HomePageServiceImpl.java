@@ -5,17 +5,20 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import slambook.com.dao.HomePageDao;
+import slambook.com.model.Slambook;
 import slambook.com.model.User;
 import slambook.com.service.HomePageService;
 
 @Service
 public class HomePageServiceImpl implements HomePageService{
 
+	static Logger logger = Logger.getLogger(HomePageServiceImpl.class);
 	@Autowired
 	private HomePageDao homePageDao;
 	
@@ -65,10 +68,18 @@ public class HomePageServiceImpl implements HomePageService{
 
 	@Async
 	public void loadFriends(User user, HttpSession httpSession) {
-		System.out.println("load Friends Start");
+		logger.debug("loading freinds started");
 		List<User> friends= homePageDao.loadFriends(user);
 		httpSession.setAttribute("friends",friends);
-		System.out.println("load Friends Finish");
+		logger.debug("loading freinds stop");
+	}
+
+
+	@Override
+	public Slambook showSlambook(long userId) {
+		
+		return null;
+		
 	}
 
 

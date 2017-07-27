@@ -53,6 +53,14 @@
     color: white;
     margin-top: 10px;
 }
+.header_login .fb-login{
+	position: absolute;
+    width: 100px;
+    height: 30px;
+    margin-left: 660px;
+    margin-top: 27px;
+
+}
 .header_login .input-password{
        position: absolute;
     width: 100px;

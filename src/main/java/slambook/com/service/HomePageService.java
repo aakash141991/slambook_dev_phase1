@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import slambook.com.model.Slambook;
 import slambook.com.model.User;
 
 public interface HomePageService {
@@ -13,5 +14,7 @@ public interface HomePageService {
 	public User getUserByEmail(String string);
 
 	public void loadFriends(User user, HttpSession httpSession);
+
+	public Slambook showSlambook(long userId);
 
 }

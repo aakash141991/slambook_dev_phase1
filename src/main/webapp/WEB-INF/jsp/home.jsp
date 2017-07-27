@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="css/home.css" type="text/css" />
 <script src="jars/jquery-3.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="js/home.js" type="text/javascript"></script>
 <title>Insert title here</title>
 </head>
@@ -17,11 +18,15 @@
 	<div ><img class="profile_img" src="images/profile.jpg" /></div>
 		<ul class="activity-links">
 			<li><c:out value=" ${user.firstName }"></c:out></li>
-			<li>Connections</li>
+			<li><a  href="javascript:void(0)">Connections</a></li>
+			<li ><a  href="javascript:void(0)">My SLambuk</a></li>
 			<li ><a id="clickadd" href="javascript:void(0)">Add</a></li>
 		</ul>
 	</div>
-	<div class="center-view"></div>
+	<div class="center-view">
+		<div ng-app="myApp" ng-controller="searchController" ng-init="init('${user}')">
+		</div>
+	</div>
 	 <div class="right-view"></div>
 	
 </div>

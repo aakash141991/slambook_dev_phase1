@@ -26,7 +26,6 @@ public class User{
 	
 	private String gender;
 	
-
 	
 	public User(User u) {
 		firstName= u.getFirstName();

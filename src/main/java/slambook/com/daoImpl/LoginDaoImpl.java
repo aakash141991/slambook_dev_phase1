@@ -37,10 +37,10 @@ public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
 		String password = loginForm.getPassword();
 		User user =new User();
 		String query="from User u where u.email=?";
-		List<User> users=getHibernateTemplate().find(query,email);
+		List<Object> users=getHibernateTemplate().find(query,email);
 		if(users.size()>0){
-			if(users.get(0).getPassword().equals(password)){
-				user= users.get(0);
+			if(((User) users.get(0)).getPassword().equals(password)){
+				user= (User) users.get(0);
 			}
 			
 		}

@@ -11,4 +11,16 @@ $( document ).ready(function() {
 		});
 		
 });
+	
+});
+
+var app = angular.module("myApp", []);
+
+
+app.controller("searchController", function($scope) {
+	$scope.genders=["male","female"];
+	 $scope.init = function(user){
+		    var userNew= JSON.stringify(user);
+		 console.log(userNew);
+		  }
 });
