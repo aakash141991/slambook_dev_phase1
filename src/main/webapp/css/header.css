@@ -26,7 +26,6 @@
 .logo{
 	width: 100px;
     height: 30px;
-    margin-top: 10px;
     position: absolute;
     margin-left: 10px;
 }
@@ -37,3 +36,5 @@ height:20px;
   max-height: 100px;
     max-width: 100px;
 }
+/* responsive */
+

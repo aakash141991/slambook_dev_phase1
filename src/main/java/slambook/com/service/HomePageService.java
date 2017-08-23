@@ -13,8 +13,10 @@ public interface HomePageService {
 
 	public User getUserByEmail(String string);
 
-	public void loadFriends(User user, HttpSession httpSession);
+	/*public void loadFriends(User user, HttpSession httpSession);*/
 
-	public Slambook showSlambook(long userId);
+	public Slambook getSlambook(long userId, String slambookName);
+
+	public List<User> getConnections(String email);
 
 }

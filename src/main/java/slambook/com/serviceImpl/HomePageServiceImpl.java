@@ -66,20 +66,26 @@ public class HomePageServiceImpl implements HomePageService{
 	}
 
 
-	@Async
+	/*@Async
 	public void loadFriends(User user, HttpSession httpSession) {
 		logger.debug("loading freinds started");
 		List<User> friends= homePageDao.loadFriends(user);
 		httpSession.setAttribute("friends",friends);
 		logger.debug("loading freinds stop");
+	}*/
+
+
+	@Override
+	public Slambook getSlambook(long userId, String slambookName) {
+		Slambook slambook = getHomePageDao().getSlambook(userId,slambookName);
+		return slambook;
 	}
 
 
 	@Override
-	public Slambook showSlambook(long userId) {
-		
-		return null;
-		
+	public List<User> getConnections(String email) {
+		List<User> friends= getHomePageDao().getConnections(email);
+		return friends;
 	}
 
 

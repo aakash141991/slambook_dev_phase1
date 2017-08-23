@@ -1,9 +1,9 @@
 @CHARSET "ISO-8859-1";
 /* sizes */
-#main-wrap > div { min-height: 450px; }
+/* #main-wrap > div { min-height: 450px; }
 
 #main-wrap {
-    /* overflow to handle inner floating block */
+    overflow to handle inner floating block
     overflow: hidden;
 }
 
@@ -87,7 +87,7 @@
      
 }
 
-/* Registration css */
+Registration css
 .registration-heading{
 	font-size:      40px;
                 font-weight:    bold;
@@ -121,4 +121,73 @@
 	z-index: 1;
 	color: brown;
 	font-weight: bold;
+}
+ */
+/* responsive */
+
+.header{
+   min-height: 80px;
+	font-family:Arial, Helvetica, sans-serif;
+	   background-color: maroon;
+}
+
+.header-items{
+	font-size:20px;
+}
+.fb-login-button{
+	padding-right: 40px;
+	padding-top: 15px;
+	width:100px;
+}
+.modal-header,.btn-footer{
+	background-color: maroon;
+	color:White;
+}
+.modal-title{
+	color:White;
+}
+.reg-form{
+	padding-top: 30px;
+}
+.right-lohp-center{
+	
+}
+.first-row-loggedout{
+	 background-image: url("background/register.jpg");
+     z-index: -3;
+}
+.registration-heading{
+	color:white;
+}
+.registration-heading{
+	font-size:      40px;
+                font-weight:    bold;
+                font-family:inherit;
+                margin-top:10px;
+}
+.align-password{
+	margin-left: 85px;
+}
+.align-button-submit{
+	margin-left: 30px;
+}
+.create-button{
+	 background-color: maroon;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:280px;
+}
+placeholder {
+    text-align: center;
+}
+
+.second-row-loggedout{
+	margin-top: 40px;
 }

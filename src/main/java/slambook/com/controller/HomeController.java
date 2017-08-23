@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import slambook.com.model.Slambook;
@@ -26,7 +27,17 @@ public class HomeController {
 @Autowired
 private HomePageService homePageService;
 
- static Logger logger = Logger.getLogger(HomeController.class);
+
+
+ public HomePageService getHomePageService() {
+	return homePageService;
+}
+
+public void setHomePageService(HomePageService homePageService) {
+	this.homePageService = homePageService;
+}
+
+static Logger logger = Logger.getLogger(HomeController.class);
 
 	@RequestMapping("/home")
 	public String loadHomePage(Model model,HttpSession httpSession){
@@ -36,7 +47,8 @@ private HomePageService homePageService;
 		
 		if((user != null)&& (LoginUtil.getLogginStatus(httpSession)).equalsIgnoreCase("true") ){
 			model.addAttribute("user", user);
-			homePageService.loadFriends(user,httpSession);
+			List <User> friends= homePageService.getConnections(user.getEmail());
+			model.addAttribute("friends",friends);
 			
 			return "home";
 		}else{
@@ -61,11 +73,21 @@ private HomePageService homePageService;
 		
 	}
 	
-	@RequestMapping(method=RequestMethod.GET,value="/showSlambook.html")
-	public String slambook(HttpSession httpSession){
+	@RequestMapping(method=RequestMethod.GET,value="/getSlambook.html")
+	public String getSlambook(@RequestParam("slambookName") String slambookName,HttpSession httpSession){
 		User user = (User) httpSession.getAttribute("user");
-		Slambook slambook=homePageService.showSlambook(user.getUserId());
+		Slambook slambook=homePageService.getSlambook(user.getUserId(),slambookName);
 		return "myBook";
+		
+	}
+	
+	@RequestMapping(method=RequestMethod.GET,value="/getConnections.html")
+	public @ResponseBody List<User> getConnections(HttpSession httpSession){
+		User user = (User) httpSession.getAttribute("user");
+		String email=user.getEmail();
+		List<User> friends= getHomePageService().getConnections(email);
+		
+		return friends;
 		
 	}
 }

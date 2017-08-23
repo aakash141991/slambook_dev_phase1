@@ -26,7 +26,23 @@ public class User{
 	
 	private String gender;
 	
+	private long fbUserId;
 	
+	private String profileImg;
+	
+	
+	public String getProfileImg() {
+		return profileImg;
+	}
+	public void setProfileImg(String profileImg) {
+		this.profileImg = profileImg;
+	}
+	public long getFbUserId() {
+		return fbUserId;
+	}
+	public void setFbUserId(long fbUserId) {
+		this.fbUserId = fbUserId;
+	}
 	public User(User u) {
 		firstName= u.getFirstName();
 		lastName = u.getLastName();

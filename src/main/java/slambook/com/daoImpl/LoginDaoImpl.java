@@ -14,6 +14,7 @@ import slambook.com.model.User;
 
 @Repository
 public class LoginDaoImpl implements LoginDao {
+	
 @Autowired
 private HibernateTemplate hibernateTemplate;
 

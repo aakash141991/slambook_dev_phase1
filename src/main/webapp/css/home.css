@@ -1,7 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 /* sizes */
-#pageContainer > div { min-height: 450px; }
+/* #pageContainer > div { min-height: 450px; }
 
 #pageContainer{
 	 overflow: hidden;
@@ -30,8 +30,8 @@
 	   height: 500px;
 	   border-left:solid maroon 4px;
 }
-
-.activity-links{
+ */
+ .activity-links{
 	list-style-type: none;
 	text-align:center;
 	padding: 0;
@@ -39,14 +39,14 @@
 	margin-top:0px;
 	
 }
-li{
+.activity-links li{
 	padding-right: .6em;
 	margin: 1em 0;
 	text-decoration: underline;
 	
-}
+} 
 .profile_img{
-	margin-left:85px;
+	margin-left:30px;
 	margin-top:30px;
 	max-height: 100px;
     max-width: 100px;
@@ -54,4 +54,63 @@ li{
 }
 .activity-links li a{
 	color:black;
+}
+
+/* responsive */
+.connections,#load-more-row{
+	display: none;
+}
+.connections{
+	margin-bottom:50px;
+}
+#load-more-row{
+	 padding: 10px;
+    text-align: center;
+    background-color: maroon;
+	color:white;
+	position: fixed;
+	bottom: 100px;
+	margin: -16px -8px;
+	margin-left: 350px;
+}
+.friend-box{
+	
+	padding-bottom: 20px;
+	
+}
+.friend-img{
+	max-height: 100px;
+    max-width: 100px;
+    margin-top: 20px;
+}
+.connections .col{
+	display: none;
+}
+
+
+/* book css */
+.template-img{
+	max-height: 100px;
+    max-width: 100px;
+    margin-top: 20px;
+}
+.modal-header{
+	background-color: maroon;
+	color:White;
+}
+.modal-footer .btn {
+	background-color: maroon;
+	color:White;
+}
+.modal-title{
+	color:White;
+}
+.addBookText{
+	color:Black;
+	margin-left: 20px;
+	font-weight: bold;
+}
+.save-button{
+	background-color: maroon;
+	color:White;
 }

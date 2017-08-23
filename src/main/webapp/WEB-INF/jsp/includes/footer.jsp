@@ -19,9 +19,17 @@
  padding-top:10px;
  text-decoration: none;
 }
+footer{
+font-family:Arial, Helvetica, sans-serif;
+	   background-color: maroon;
+	   color:white;
+	   position: fixed;
+       bottom: 0;
+       width: 100%;
+}
 </style>
 </head>
-<body>
+<!-- <body>
 	<div id="footer">
 	<ul>
 		<li class="footer-links">About-us</li>
@@ -29,5 +37,29 @@
 	</ul>
 		
 	</div>
-</body>
+</body> -->
+<footer class="container-fluid bg-4 ">
+ 
+  <div class="row">
+  	<div class="col-md-4 col-xs-4 col-offset-6">
+		<ul><li>lipsum</li>
+		<li>epsum</li>
+		<li>text</li>
+		</ul>  	
+  	</div>
+  	<div class="col-md-4 col-xs-4 col-offset-4">
+		<ul><li>lipsum</li>
+		<li>epsum</li>
+		<li>text</li>
+		</ul>  	
+  	</div>
+  	<div class="col-md-4  col-xs-4 col-offset-4">
+		<ul><li>lipsum</li>
+		<li>epsum</li>
+		<li>text</li>
+		</ul>  	
+  	</div>
+  
+  </div>
+</footer>
 </html>
